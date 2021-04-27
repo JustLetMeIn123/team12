@@ -152,7 +152,6 @@ public class ComplexNumber
     double imaginary = this.getImaginary();
     
     double realDifference = ((int) real + 1) - real;
-    System.out.println(realDifference);
     if (Math.abs(realDifference) <= 0.000000000001 && Math.abs(realDifference) > 0) 
       real = Math.ceil(this.getReal() / 1.0);
     else if (Math.abs(realDifference) >= 0.999999999 && Math.abs(realDifference) < 1)
