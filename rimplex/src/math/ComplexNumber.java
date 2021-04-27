@@ -147,6 +147,24 @@ public class ComplexNumber
    */
   public String toString(final boolean parentheses)
   {
+    String steps = this.getSteps();
+    double real = this.getReal();
+    double imaginary = this.getImaginary();
+    
+    double realDifference = ((int) real + 1) - real;
+    System.out.println(realDifference);
+    if (Math.abs(realDifference) <= 0.000000000001 && Math.abs(realDifference) > 0) 
+      real = Math.ceil(this.getReal() / 1.0);
+    else if (Math.abs(realDifference) >= 0.999999999 && Math.abs(realDifference) < 1)
+      real = (int) this.getReal();
+    double imagDifference = ((int) imaginary + 1) - imaginary;
+    if (Math.abs(imagDifference) <= 0.000000001 && imagDifference != 0) 
+      imaginary = Math.ceil(this.getImaginary() / 1.0);
+    
+    this.real = real;
+    this.imaginary = imaginary;
+    this.setSteps(steps);
+    
     final String openParenthese = "(";
     final String iParenthese = "i)";
 
