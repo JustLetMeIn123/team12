@@ -157,8 +157,10 @@ public class ComplexNumber
     else if (Math.abs(realDifference) >= 0.999999999 && Math.abs(realDifference) < 1)
       real = (int) this.getReal();
     double imagDifference = ((int) imaginary + 1) - imaginary;
-    if (Math.abs(imagDifference) <= 0.000000001 && imagDifference != 0) 
+    if (Math.abs(imagDifference) <= 0.000000000001 && imagDifference > 0) 
       imaginary = Math.ceil(this.getImaginary() / 1.0);
+    else if (Math.abs(imagDifference) >= 0.999999999 && Math.abs(imagDifference) < 1)
+      real = (int) this.getImaginary();
     
     this.real = real;
     this.imaginary = imaginary;
